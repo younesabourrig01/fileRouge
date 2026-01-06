@@ -1,16 +1,35 @@
-# React + Vite
+Shop.ma
+Description
+Shop.ma est une application e-commerce moderne dédiée à la vente en ligne de produits artisanaux et traditionnels marocains. Ce projet est réalisé dans le cadre du module M203 - Développement Front-End avec React à l'ISTA Mirleft.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technologies
+Le projet est construit avec une stack technique moderne et performante:
+Framework : React
+Outil de build : Vite
+Navigation : React Router
+State Management : Redux Toolkit
+Appels API : Axios
+Styling : Tailwind CSS
 
-Currently, two official plugins are available:
+Pour lancer le projet localement, suivez ces étapes :
+Cloner le dépôt :
+git clone https://github.com/younesabourrig01/fileRouge.git
+cd shop-ma-prenom-nom
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Installer les dépendances :
+npm install
+npm run dev
 
-## React Compiler
+Fonctionnalités
+L'application intègre les fonctionnalités suivantes:
+Catalogue complet : Affichage d'un minimum de 20 produits artisanaux classés par catégories (Cuisine, Mode, Décoration, Artisanat).
+Recherche et Filtres : Recherche par nom et filtrage par catégorie, prix (min/max) et disponibilité en stock.
+Gestion du Panier : Ajout, suppression et modification des quantités avec calcul automatique du total TTC.
+Détails Produits : Consultation des fiches produits détaillée.
+Contact : Formulaire de contact avec validation des champs et de l'email.
+Responsive Design : Interface optimisée pour mobile.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Auteur
+Nom : Younes ABOURRIG
+Formation : 2ème Année Développement Digital - ISTA Mirleft
+Année : 2025/2026
