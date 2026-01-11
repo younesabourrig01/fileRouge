@@ -3,40 +3,32 @@ import { useState } from "react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Define the hover class once to keep the code clean
+  const hoverStyle =
+    "hover:text-[#1DBB8B] transition-colors duration-300 cursor-pointer";
+
   return (
-    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-white shadow-sm border-b  border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex-shrink-0">
-          <h2>SHOP.MA</h2>
+          <h2 className="text-xl font-bold">SHOP.MA</h2>
         </div>
 
-        {/*navigation*/}
         <nav className="hidden md:block">
           <ul className="flex space-x-10 text-sm font-semibold uppercase tracking-wide text-gray-600">
-            <li>
-              <a href="#">Accueil</a>
-            </li>
-            <li>
-              <a href="#">Produits</a>
-            </li>
-            <li>
-              <a href="#">Panier</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
+            <li className={hoverStyle}>Accueil</li>
+            <li className={hoverStyle}>Produits</li>
+            <li className={hoverStyle}>Panier</li>
+            <li className={hoverStyle}>Contact</li>
           </ul>
         </nav>
 
-        {/* Bouton Burger*/}
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-gray-600 "
+            className={`p-2 transition-colors ${hoverStyle}`}
           >
             {isMenuOpen ? (
-              // icone "X"
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -51,7 +43,6 @@ const Header = () => {
                 />
               </svg>
             ) : (
-              // icone "Burger" quand le menu est ferme
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -70,8 +61,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Menu Mobile Dropdown */}
-      {/* S'affiche uniquement si isMenuOpen est true */}
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
@@ -79,22 +68,22 @@ const Header = () => {
       >
         <ul className="flex flex-col p-4 space-y-4 text-sm font-semibold uppercase text-gray-600">
           <li>
-            <a href="#" className="block py-2">
+            <a href="#" className={`block py-2 ${hoverStyle}`}>
               Accueil
             </a>
           </li>
           <li>
-            <a href="#" className="block py-2">
+            <a href="#" className={`block py-2 ${hoverStyle}`}>
               Produits
             </a>
           </li>
           <li>
-            <a href="#" className="block py-2">
+            <a href="#" className={`block py-2 ${hoverStyle}`}>
               Panier
             </a>
           </li>
           <li>
-            <a href="#" className="block py-2">
+            <a href="#" className={`block py-2 ${hoverStyle}`}>
               Contact
             </a>
           </li>
