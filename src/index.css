@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .app.light {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.app.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.navbar.light {
+  background: #eee;
+}
+
+.navbar.dark {
+  background: #333;
+} */
