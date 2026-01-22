@@ -1,6 +1,6 @@
 import ProductCard from "../ProductCard/ProductCard";
 import Spinner from "react-bootstrap/Spinner";
-import useFetch from "../Hooks/useFetch";
+import useFetch from "../../Hooks/useFetch";
 import { useState } from "react";
 
 function ProductsList() {

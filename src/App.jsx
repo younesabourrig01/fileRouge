@@ -7,9 +7,10 @@ import { ProductDetail } from "./components/Pages/ProductDetail";
 import NotFound from "./components/Pages/NotFound";
 import Panier from "./components/Pages/Panier";
 import Contact from "./components/Pages/Contact";
-// import useTheme from "./components/Hooks/useTheme";
+// import useTheme from "./Hooks/useTheme";
 
 function App() {
+  // const { theme } = useTheme();
   return (
     <div>
       <Header />

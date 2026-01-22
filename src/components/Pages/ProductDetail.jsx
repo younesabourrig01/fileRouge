@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import useFetch from "../Hooks/useFetch";
+import useFetch from "../../Hooks/useFetch";
 
 export const ProductDetail = () => {
   const { id } = useParams();
