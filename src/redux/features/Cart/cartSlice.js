@@ -1,4 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7ba3f45e3c4389da5fd725a980b5309b48cfd600
 import { loadCartFromStorage } from "./cartStorage";
 
 const initialState = loadCartFromStorage() || {
