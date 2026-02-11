@@ -10,7 +10,7 @@ export const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { data, loading, error } = useFetch(
-    `https://fakestoreapi.com/products/${id}`,
+    `http://localhost:5000/api/products/${id}`,
   );
 
   if (loading)

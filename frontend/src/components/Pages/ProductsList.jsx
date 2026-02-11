@@ -61,7 +61,7 @@ function ProductsList() {
         {searchedProducts.map((p) => (
           <ProductCard
             key={p.id}
-            id={p.id}
+            id={p._id}
             title={p.title}
             price={p.price}
             description={p.description}
