@@ -1,20 +1,24 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const connectDB = require("./config/db");
+const mongoose = require("mongoose");
+
+const authRoutes = require("./routes/authRoutes");
+const errorHandler = require("./middlewares/errorMiddleware");
 
 const app = express();
 
-// middlewares
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// connect database
-connectDB();
+// Routes
+app.use("/api/auth", authRoutes);
 
-// routes
-app.use("/api/products", require("./routes/productRoutes"));
+// Error
+app.use(errorHandler);
 
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// DB + Server
+mongoose.connect(process.env.MONGO_URI).then(() => {
+  app.listen(process.env.PORT, () => console.log("Server running"));
 });
