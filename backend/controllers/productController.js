@@ -5,6 +5,8 @@ const {
   sendNotFound,
 } = require("../tools/responseHelper");
 const { isValidObjectId } = require("../tools/validators");
+const fs = require("fs");
+const path = require("path");
 
 // GET all products
 const getProducts = async (req, res) => {
@@ -40,9 +42,12 @@ const getProductById = async (req, res) => {
 // POST new product
 const createProduct = async (req, res) => {
   try {
-    const product = new Product(req.body);
-    const savedProduct = await product.save();
+    const product = new Product({
+      ...req.body,
+      image: req.file ? req.file.path : null,
+    });
 
+    const savedProduct = await product.save();
     return sendSuccess(res, savedProduct, 201);
   } catch (error) {
     return sendError(res, error.message, 400);
@@ -58,14 +63,23 @@ const updateProduct = async (req, res) => {
       return sendError(res, "Invalid product ID", 400);
     }
 
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return sendNotFound(res, "Produit");
+    }
+
+    if (req.file) {
+      if (product.image && fs.existsSync(product.image)) {
+        fs.unlinkSync(product.image);
+      }
+      req.body.image = req.file.path;
+    }
+
     const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     });
-
-    if (!updatedProduct) {
-      return sendNotFound(res, "Produit");
-    }
 
     return sendSuccess(res, updatedProduct);
   } catch (error) {
